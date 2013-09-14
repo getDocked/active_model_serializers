@@ -51,7 +51,6 @@ module ActiveModel
           serializer = item.active_model_serializer
         end
         serializer ||= DefaultSerializer
-        puts options.except[:root]
         options.delete[:root]
         serializable = serializer.new(item, options)
 
