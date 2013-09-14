@@ -52,7 +52,7 @@ module ActiveModel
         end
         serializer ||= DefaultSerializer
         
-        options.delete[:root]
+        options.delete(:root)
         puts options
         serializable = serializer.new(item, options)
 
