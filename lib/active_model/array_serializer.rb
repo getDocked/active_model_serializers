@@ -52,13 +52,13 @@ module ActiveModel
         end
         serializer ||= DefaultSerializer
 
-        serializable = serializer.new(item, options.merge(root: nil))
+        serializable = serializer.new(item, options)
 
-        if serializable.respond_to?(:serializable_hash)
-          serializable.serializable_hash
-        else
+        # if serializable.respond_to?(:serializable_hash)
+        #   serializable.serializable_hash
+        # else
           serializable.as_json
-        end
+        # end
       end
     end
   end
