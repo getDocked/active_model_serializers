@@ -52,7 +52,7 @@ module ActiveModel
         end
         serializer ||= DefaultSerializer
         
-        
+        puts options
         serializable = serializer.new(item, options)
 
         # if serializable.respond_to?(:serializable_hash)
