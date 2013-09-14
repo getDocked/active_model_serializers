@@ -51,8 +51,9 @@ module ActiveModel
           serializer = item.active_model_serializer
         end
         serializer ||= DefaultSerializer
-
-        serializable = serializer.new(item, options.except[:root])
+        puts options.except[:root]
+        options.delete[:root]
+        serializable = serializer.new(item, options)
 
         # if serializable.respond_to?(:serializable_hash)
         #   serializable.serializable_hash
